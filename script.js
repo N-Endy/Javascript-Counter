@@ -5,7 +5,8 @@ let btns = document.querySelectorAll('a');
 
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
-        btn.className === 'lower' ? number.textContent-- : number.textContent++;
+        if (btn.className === 'lower') number.textContent--;
+        if (btn.className === 'add') number.textContent++;
 
         number.innerText > 0 ? number.style.color = 'green' : number.style.color = 'black';
         number.innerText == 0 ? lower.classList.add('disabled') : lower.classList.remove('disabled');
